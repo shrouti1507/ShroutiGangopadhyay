@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.1.1 (2022-12-14)
+
+
+### Bug Fixes
+
+* **new:** check hotfix flow ([980591b](https://github.com/shrouti1507/ShroutiGangopadhyay/commit/980591b5ac8b696a22fd3c17fa7c4982581d2207))
+
 ## 1.1.0 (2022-12-14)
 
 
