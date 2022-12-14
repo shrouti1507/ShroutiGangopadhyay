@@ -1,2 +1,2 @@
 let a = 'test';
-let b = 'check draft';
+let b = 'check drafting';
