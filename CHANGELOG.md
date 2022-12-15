@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 1.2.0 (2022-12-15)
+
+
+### Features
+
+* **gactions:** testing push with test cases ([8b54406](https://github.com/shrouti1507/ShroutiGangopadhyay/commit/8b54406d0c726b780f7f7394c40f674797a09f19))
+
+
+### Bug Fixes
+
+* **minor:** minor var fix ([26e547c](https://github.com/shrouti1507/ShroutiGangopadhyay/commit/26e547cd0a7e483070b9d78e6952f3e447f2290f))
+
 ### 1.1.2 (2022-12-15)
 
 
