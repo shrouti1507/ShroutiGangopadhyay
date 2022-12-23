@@ -1,4 +1,4 @@
 let a = 'test';
 let b = 'check drafting';
-let new = 'new fix';
-let new = 'new hotfix branch test';
+let news = 'new fix';
+let newbie = 'new hotfix branch test';
