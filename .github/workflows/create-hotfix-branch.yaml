@@ -2,10 +2,6 @@ name: Create New Hotfix Branch
 
 on:
   workflow_dispatch:
-    inputs:
-      branch_name:
-        description: Hotfix branch name
-        required: true
 
 jobs:
   create-branch:
@@ -14,9 +10,24 @@ jobs:
 
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Create branch
-        uses: peterjgrainger/action-create-branch@v2.2.0
+      - name: Create hotfix Branch
+        id: create-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          branch: 'hotfix/${{ github.event.inputs.branch_name }}'
+          HUSKY: 0
+        run: |
+          source_branch_name=${GITHUB_REF##*/}
+          git fetch origin main --depth=1
+          git merge origin/main
+          current_version=$(jq -r .version package.json)
+
+          npm version patch --no-git-tag-version
+          new_version=$(jq -r .version package.json)
+          git reset --hard
+
+          branch_name="hotfix/${new_version}"
+
+          echo "New hotfix branch name is $branch_name"
+          git checkout -b "$branch_name"
+          git push --set-upstream origin "$branch_name"
+          echo "::set-output name=source_branch_name::$source_branch_name"
+          echo "::set-output name=branch_name::$branch_name"
