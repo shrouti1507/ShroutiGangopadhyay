@@ -1,16 +1,17 @@
-name: Create new hotfix branch
+name: Create New Hotfix Branch
 
 on:
   workflow_dispatch:
     inputs:
-      hotfix_name:
+      branch_name:
         description: Hotfix branch name
         required: true
 
 jobs:
   create-branch:
-    name: Create new branch
+    name: Create New Branch
     runs-on: ubuntu-latest
+
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Create branch
@@ -18,5 +19,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          node-version: '16'
-          branch: 'hotfix/${{ github.event.inputs.hotfix_name }}'
+          branch: 'hotfix/${{ github.event.inputs.branch_name }}'
