@@ -21,7 +21,9 @@ jobs:
           BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
           VERSION=${BRANCH_NAME#hotfix-}
           VERSION=${VERSION#release/}
+
           echo "release_version=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -39,6 +41,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email noreply@github.com
+
       - name: Tag & Create GitHub Release
         id: create_release
         env:
@@ -50,6 +53,7 @@ jobs:
           git push origin refs/tags/v${{ steps.extract-version.outputs.release_version }}
           npm run release:github
           echo "DATE=$(date)" >> $GITHUB_ENV
+
       - name: Pull Changes Into develop Branch
         uses: repo-sync/pull-request@v2
         with:
@@ -64,6 +68,14 @@ jobs:
         if: startsWith(github.event.pull_request.head.ref, 'hotfix-release/')
         with:
           branches: 'hotfix-release/*'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Delete Hotfix Base Branch
+        uses: koj-co/delete-merged-action@master
+        if: startsWith(github.ref, 'refs/heads/hotfix/')
+        with:
+          branches: 'hotfix/*'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
