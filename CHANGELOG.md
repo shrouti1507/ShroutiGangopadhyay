@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.1 (2023-01-02)
+
+
+### Bug Fixes
+
+* **pr:** new pr title ([#13](https://github.com/shrouti1507/ShroutiGangopadhyay/issues/13)) ([f8a7493](https://github.com/shrouti1507/ShroutiGangopadhyay/commit/f8a749330be9d8caa2b77a9f3a9921a73676adb4))
+
 ## 1.2.0 (2022-12-15)
 
 
