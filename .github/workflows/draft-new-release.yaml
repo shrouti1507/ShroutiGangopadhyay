@@ -87,6 +87,6 @@ jobs:
         uses: koj-co/delete-merged-action@master
         if: startsWith(github.ref, 'refs/heads/hotfix/')
         with:
-          branches: ${GITHUB_REF##*/}
+          branches: 'hotfix/*'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
