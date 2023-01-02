@@ -73,7 +73,7 @@ jobs:
       
       - name: Delete Hotfix Base Branch
         uses: koj-co/delete-merged-action@master
-        if: startsWith(github.ref, 'refs/heads/hotfix/')
+        if: startsWith(github.ref, 'refs/heads/hotfix/') || startsWith(github.event.pull_request.head.ref, 'hotfix-release/') && github.event.pull_request.merged == true
         with:
           branches: "`${{ github.event.pull_request.head.ref }}`"
         env:
