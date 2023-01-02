@@ -6,4 +6,4 @@ let newCheck = 'new checking';
 let love = 'love new changes';
 let checknew = 'new';
 let check = 'new check'
-let lastest = 'lastest check'
+let lastest = 'lastest check';
