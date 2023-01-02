@@ -5,4 +5,4 @@ let newbie = 'new hotfix branch test';
 let newCheck = 'new checking';
 let love = 'love new changes';
 let checknew = 'new';
-let check = 'check'
+let check = 'new check'
