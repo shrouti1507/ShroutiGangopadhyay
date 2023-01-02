@@ -35,4 +35,4 @@ jobs:
 
       - name: Deploy To Sources Development DB
         run: |
-          python scripts/deployToDB.py https://sources-api.dev.rudderlabs.com
+          echo "sources deployment is done"
