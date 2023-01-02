@@ -1,27 +1,36 @@
-name: Test schema files
+name: Unit Tests
 
 on:
+  workflow_dispatch:
   push:
     branches: ['main', 'develop']
   pull_request:
-    branches: [ 'main', 'develop' ]
+    types: ['opened', 'reopened', 'synchronize']
 
 jobs:
-  build:
-
+  test:
+    name: Unit Tests
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm test
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        env:
+          HUSKY: 0
+        run: |
+          npm ci
+      - name: Execute Unit Tests
+        env:
+          HUSKY: 0
+        run: |
+          npm run test
