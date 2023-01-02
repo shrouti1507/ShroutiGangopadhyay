@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.3 (2023-01-02)
+
+
+### Bug Fixes
+
+* **check:** fixing check ([#18](https://github.com/shrouti1507/ShroutiGangopadhyay/issues/18)) ([ac803b8](https://github.com/shrouti1507/ShroutiGangopadhyay/commit/ac803b8b49736ff468c5bd665307c00e2239132e))
+
 ### 1.2.2 (2023-01-02)
 
 ### 1.2.1 (2023-01-02)
