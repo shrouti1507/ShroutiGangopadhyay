@@ -18,7 +18,7 @@ jobs:
       - name: Extract Version
         id: extract-version
         run: |
-          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          BRANCH_NAME="`${{ github.event.pull_request.head.ref }}`"
           VERSION=${BRANCH_NAME#hotfix-}
           VERSION=${VERSION#release/}
 
@@ -75,7 +75,7 @@ jobs:
         uses: koj-co/delete-merged-action@master
         if: startsWith(github.ref, 'refs/heads/hotfix/')
         with:
-          branches: 'hotfix/*'
+          branches: "`${{ github.event.pull_request.head.ref }}`"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -83,6 +83,6 @@ jobs:
         uses: koj-co/delete-merged-action@master
         if: startsWith(github.event.pull_request.head.ref, 'release/')
         with:
-          branches: ${{ github.event.pull_request.head.ref }}
+          branches: 'release/*'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
