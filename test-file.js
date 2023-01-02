@@ -7,3 +7,4 @@ let love = 'love new changes';
 let checknew = 'new';
 let check = 'new check'
 let lastest = 'lastest';
+let gangu = 'gangu'

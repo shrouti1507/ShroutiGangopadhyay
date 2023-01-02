@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.2.11 (2023-01-02)
+
+
+### Bug Fixes
+
+* **gangu:** gangu being gangu ([#38](https://github.com/shrouti1507/ShroutiGangopadhyay/issues/38)) ([baa7cbb](https://github.com/shrouti1507/ShroutiGangopadhyay/commit/baa7cbb9a3ed4e7eb4d1fd3aa6fd1de8ee659f9c))
+
 ### 1.2.10 (2023-01-02)
 
 
